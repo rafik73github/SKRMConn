@@ -36,7 +36,13 @@ namespace SKRMConn
             {
                 comboBox.Items.Add(a);
             }
-             //   textBox1.Text = Conn1.DoConn("SELECT * FROM events");
+
+            List<string> xx1 = Conn1.DoConn("id_event", "SELECT * FROM events ORDER BY event ASC");
+            foreach (string a1 in xx1)
+            {
+                comboBox1.Items.Add(a1);
+            }
+            //   textBox1.Text = Conn1.DoConn("SELECT * FROM events");
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows;
+using System.Data;
 
 namespace SKRMConn
 {
@@ -21,13 +22,15 @@ namespace SKRMConn
 
         public List<string> DoConn(string columnName , string sql)
         {
-             MySqlConnection SkrmConn = new MySqlConnection(skrmConnString);
+            skrmDataList.Clear();
+            MySqlConnection SkrmConn = new MySqlConnection(skrmConnString);
             try
             {
                 SkrmConn.Open();
                 MySqlCommand Cmd = new MySqlCommand(sql, SkrmConn);
                 MySqlDataReader rdr = Cmd.ExecuteReader();
 
+                
                 // while (rdr.Read())
                 // {
                 //    win.textBox1.Text = rdr.GetString(1);
@@ -40,9 +43,6 @@ namespace SKRMConn
                     skrmDataList.Add(rdr.GetString(columnName).ToString());
                 }
 
-
-               // MessageBox.Show("ServerVersion: " + SkrmConn.ServerVersion +
-               // "\nState: " + SkrmConn.State.ToString() + "\nDatabase: " + SkrmConn.Database);
                SkrmConn.Close();
             }
             catch (Exception connErr)
@@ -52,7 +52,32 @@ namespace SKRMConn
                
             }
             return skrmDataList;
+            
         }
 
-    }
+        public DataTable GetDataMysql(string sql1)
+        {
+
+            MySqlConnection SkrmConn1 = new MySqlConnection(skrmConnString);
+            DataTable dt = new DataTable("Test");
+            try
+            {
+                SkrmConn1.Open();
+                
+                MySqlDataAdapter returnVal = new MySqlDataAdapter(sql1, SkrmConn1);
+                
+                returnVal.Fill(dt);
+                SkrmConn1.Close();
+                
+            }
+            catch (Exception connErr)
+            {
+
+                MessageBox.Show(connErr.ToString());
+
+            }
+            return dt;
+        }
+
+     }
 }
