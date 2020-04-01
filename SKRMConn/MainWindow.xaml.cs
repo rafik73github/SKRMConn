@@ -21,7 +21,7 @@ namespace SKRMConn
     public partial class MainWindow : Window
     {
 
-        readonly MysqlConn Conn1 = new MysqlConn("Server=mysql-727668.vipserv.org;Database=rafik73_mapy;Uid=rafik73_mapy;Pwd=Rafaello73;");
+        readonly MysqlConn Conn1 = new MysqlConn("");
        
 
         public MainWindow()
