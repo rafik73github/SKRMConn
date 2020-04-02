@@ -29,7 +29,7 @@ namespace SKRMConn
 
         public void CreateXML(string serwerXMLText, string databaseXMLTextBox, string userXMLTextBox, string passXMLPassBox)
         {
-
+            
             XmlTextWriter createFile = new XmlTextWriter("db.xml", Encoding.UTF8);
             createFile.Formatting = Formatting.Indented;
             createFile.WriteStartElement("Root");
@@ -37,9 +37,15 @@ namespace SKRMConn
             createFile.Close();
 
             XmlDocument doc = new XmlDocument();
+
+            XmlDeclaration xmldecl = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+
             doc.Load("db.xml");
 
             XmlNode ConnData = doc.CreateElement("ConnData");
+
+            XmlElement root = doc.DocumentElement;
+            doc.InsertBefore(xmldecl, root);
 
             XmlNode sr = doc.CreateElement("sr");
             XmlNode de = doc.CreateElement("de");
