@@ -1,0 +1,23 @@
+﻿<Window x:Class="SKRMConn.XMLEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SKRMConn"
+        mc:Ignorable="d"
+        Title="XMLEdit" Height="420" Width="420">
+    <Grid>
+        <Label x:Name="SerwerXMLLabel" Content="Serwer" HorizontalAlignment="Left" Margin="31,78,0,0" VerticalAlignment="Top" Width="130" Height="26"/>
+        <TextBox x:Name="SerwerXMLTextBox" HorizontalAlignment="Left" Height="26" Margin="181,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center"/>
+        <Label x:Name="DatabaseXMLLabel" Content="Baza danych" HorizontalAlignment="Left" Margin="31,120,0,0" VerticalAlignment="Top" Width="130" Height="26"/>
+        <Label x:Name="UserXMLLabel" Content="Użytkownik" HorizontalAlignment="Left" Height="26" Margin="31,163,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="PassXMLLabel" Content="Hasło" HorizontalAlignment="Left" Height="26" Margin="31,208,0,0" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="DatabaseXMLTextBox" HorizontalAlignment="Left" Height="26" Margin="181,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="UserXMLTextBox" HorizontalAlignment="Left" Height="26" Margin="181,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="PassXMLPassBox" HorizontalAlignment="Left" Height="26" Margin="181,208,0,0" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center"/>
+        <Label x:Name="label" Content="Baza Danych - poświadczenia" HorizontalAlignment="Left" Height="35" Margin="35,18,0,0" VerticalAlignment="Top" Width="343" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Button x:Name="SaveXMLButton" Content="ZAPISZ" HorizontalAlignment="Left" Height="40" Margin="31,276,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="SaveXMLButton_Click"/>
+        <Button x:Name="EditXMLButton" Content="EDYTUJ" HorizontalAlignment="Left" Height="40" Margin="228,276,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
