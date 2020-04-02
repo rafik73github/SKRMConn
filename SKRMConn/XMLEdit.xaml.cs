@@ -42,8 +42,17 @@ namespace SKRMConn
             else
             {
                 SessionXML.CreateXML(serwerXMLText, databaseXMLTextBox, userXMLTextBox, passXMLPassBox);
+                MainWindow mainWindow = new MainWindow();
+                this.Close();
+                mainWindow.Show();
             }
 
+        }
+
+        private void EditXMLButton_Click(object sender, RoutedEventArgs e)
+        {
+            string[] x = SessionXML.ReadXML();
+            MessageBox.Show(String.Format("Serwer: {0}\nBaza danych: {1}\nUser: {2}\nHasło: {3}",x[0],x[1],x[2],x[3]));
         }
     }
 }

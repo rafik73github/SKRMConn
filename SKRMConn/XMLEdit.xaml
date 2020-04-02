@@ -17,7 +17,7 @@
         <PasswordBox x:Name="PassXMLPassBox" HorizontalAlignment="Left" Height="26" Margin="181,208,0,0" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center"/>
         <Label x:Name="label" Content="Baza Danych - poświadczenia" HorizontalAlignment="Left" Height="35" Margin="35,18,0,0" VerticalAlignment="Top" Width="343" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Button x:Name="SaveXMLButton" Content="ZAPISZ" HorizontalAlignment="Left" Height="40" Margin="31,276,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="SaveXMLButton_Click"/>
-        <Button x:Name="EditXMLButton" Content="EDYTUJ" HorizontalAlignment="Left" Height="40" Margin="228,276,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold"/>
+        <Button x:Name="EditXMLButton" Content="EDYTUJ" HorizontalAlignment="Left" Height="40" Margin="228,276,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="EditXMLButton_Click"/>
 
     </Grid>
 </Window>

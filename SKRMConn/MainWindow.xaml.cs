@@ -21,11 +21,18 @@ namespace SKRMConn
     public partial class MainWindow : Window
     {
 
-        readonly MysqlConn Conn1 = new MysqlConn("");
-       
+        readonly MysqlConn Conn1 = new MysqlConn();
+        XMLRead CheckXML = new XMLRead();
 
         public MainWindow()
         {
+            if(!CheckXML.CheckExistXML())
+            {
+                
+                XMLEdit xmlEditWindow = new XMLEdit();
+                this.Close();
+                xmlEditWindow.Show();
+            }
             InitializeComponent();
         }
 
@@ -43,6 +50,16 @@ namespace SKRMConn
                 comboBox1.Items.Add(a1);
             }
             //   textBox1.Text = Conn1.DoConn("SELECT * FROM events");
+            if(xx.Count() == 0 || xx1.Count() == 0)
+            {
+
+                XMLEdit xmlEditWindow = new XMLEdit();
+                this.Close();
+                xmlEditWindow.Show();
+
+            }
+            //MessageBox.Show(xx.Count().ToString());
+            // xx.Count();
         }
     }
 }

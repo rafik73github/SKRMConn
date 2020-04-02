@@ -12,16 +12,16 @@ namespace SKRMConn
     class MysqlConn
     {
         //string dataFromQuery;
-        readonly string skrmConnString;
+        string skrmConnString;
         readonly List<string> skrmDataList = new List<string>();
-
-        public MysqlConn(string skrmConnString)
-        {
-            this.skrmConnString = skrmConnString;
-        }
+        XMLRead getDBCredentials = new XMLRead();
 
         public List<string> DoConn(string columnName , string sql)
         {
+            string[] crDB = getDBCredentials.ReadXML();
+
+            skrmConnString = "Server ="+crDB[0]+"; Database = "+crDB[1]+"; Uid = "+crDB[2]+"; Pwd = "+crDB[3]+";";
+
             skrmDataList.Clear();
             MySqlConnection SkrmConn = new MySqlConnection(skrmConnString);
             try
@@ -44,14 +44,17 @@ namespace SKRMConn
                 }
 
                SkrmConn.Close();
+                return skrmDataList;
             }
             catch (Exception connErr)
             {
                 
                 MessageBox.Show(connErr.ToString());
-               
+                
+                skrmDataList.Clear();
+                return skrmDataList;
             }
-            return skrmDataList;
+            
             
         }
 

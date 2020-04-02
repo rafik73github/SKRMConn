@@ -10,6 +10,8 @@ namespace SKRMConn
 {
     class XMLRead
     {
+        string[] dbDataGet = new string[4];
+        
 
         public bool CheckExistXML()
         {
@@ -57,6 +59,25 @@ namespace SKRMConn
             doc.DocumentElement.AppendChild(ConnData);
             doc.Save("db.xml");
 
+        }
+
+        public string[] ReadXML()
+        {
+            
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("db.xml");
+
+            XmlNodeList nodeList = doc.GetElementsByTagName("ConnData");
+
+            foreach (XmlNode readNodeList in nodeList)
+            {
+                dbDataGet[0] = readNodeList.SelectSingleNode("sr").InnerText;
+                dbDataGet[1] = readNodeList.SelectSingleNode("de").InnerText;
+                dbDataGet[2] = readNodeList.SelectSingleNode("ur").InnerText;
+                dbDataGet[3] = readNodeList.SelectSingleNode("pd").InnerText;
+            }
+            return dbDataGet;
         }
 
     }
