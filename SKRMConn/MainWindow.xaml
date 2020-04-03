@@ -8,9 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="ConnButton" Content="Połącz" HorizontalAlignment="Left" Margin="20,21,0,0" VerticalAlignment="Top" Width="183" Height="60" Click="ConnButton_Click"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="379" Margin="232,21,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="515" />
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="20,113,0,0" VerticalAlignment="Top" Width="183"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="24" Margin="20,161,0,0" VerticalAlignment="Top" Width="183"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="20,289,0,0" VerticalAlignment="Top" Width="183"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="24" Margin="20,337,0,0" VerticalAlignment="Top" Width="183"/>
+        <Button x:Name="ConnButton2" Content="Button" HorizontalAlignment="Left" Height="66" Margin="20,103,0,0" VerticalAlignment="Top" Width="183" Click="ConnButton2_Click"/>
+        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="310" Margin="249,21,0,0" VerticalAlignment="Top" Width="510">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

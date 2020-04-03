@@ -57,7 +57,8 @@ namespace SKRMConn
 
         public DataTable GetDataMysql(string sql1)
         {
-
+            string[] crDB = getDBCredentials.ReadXML();
+            skrmConnString = "Server =" + crDB[0] + "; Database = " + crDB[1] + "; Uid = " + crDB[2] + "; Pwd = " + crDB[3] + ";";
             MySqlConnection SkrmConn1 = new MySqlConnection(skrmConnString);
             DataTable dt = new DataTable("Test");
             try

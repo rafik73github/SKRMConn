@@ -13,5 +13,26 @@ namespace SKRMConn
     /// </summary>
     public partial class App : Application
     {
-    }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            XMLRead CheckXML = new XMLRead();
+            XMLEdit xmlEditWindow = new XMLEdit();
+            MainWindow mainWindow = new MainWindow();
+
+            if (!CheckXML.CheckExistXML())
+            {
+
+                xmlEditWindow.Show();
+
+            }
+            else
+            {
+
+                mainWindow.Show();
+
+            }
+        }
+
+}
 }

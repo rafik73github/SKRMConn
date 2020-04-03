@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-
+using System.Data;
+using System.Windows.Controls;
 
 namespace SKRMConn
 {
@@ -13,17 +14,11 @@ namespace SKRMConn
     {
 
         readonly MysqlConn Conn1 = new MysqlConn();
-        XMLRead CheckXML = new XMLRead();
+        
 
         public MainWindow()
         {
-            if(!CheckXML.CheckExistXML())
-            {
-                
-                XMLEdit xmlEditWindow = new XMLEdit();
-                this.Close();
-                xmlEditWindow.Show();
-            }
+            
             InitializeComponent();
         }
 
@@ -40,7 +35,7 @@ namespace SKRMConn
             {
                 comboBox1.Items.Add(a1);
             }
-            //   textBox1.Text = Conn1.DoConn("SELECT * FROM events");
+           
             if(xx.Count() == 0 || xx1.Count() == 0)
             {
 
@@ -50,7 +45,17 @@ namespace SKRMConn
 
             }
             //MessageBox.Show(xx.Count().ToString());
-            // xx.Count();
+           
+        }
+
+        private void ConnButton2_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable TableFromMysql = Conn1.GetDataMysql("SELECT * FROM events ORDER BY event ASC");
+
+            ListView.Items.Add();
+
+            ListView.ItemsSource = TableFromMysql.DefaultView;
+
         }
     }
 }
