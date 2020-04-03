@@ -8,16 +8,21 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="ConnButton" Content="Połącz" HorizontalAlignment="Left" Margin="20,21,0,0" VerticalAlignment="Top" Width="183" Height="60" Click="ConnButton_Click"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="20,289,0,0" VerticalAlignment="Top" Width="183"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="24" Margin="20,337,0,0" VerticalAlignment="Top" Width="183"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="20,184,0,0" VerticalAlignment="Top" Width="183"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="24" Margin="20,242,0,0" VerticalAlignment="Top" Width="183"/>
         <Button x:Name="ConnButton2" Content="Button" HorizontalAlignment="Left" Height="66" Margin="20,103,0,0" VerticalAlignment="Top" Width="183" Click="ConnButton2_Click"/>
-        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="310" Margin="249,21,0,0" VerticalAlignment="Top" Width="510">
+        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="60" Margin="249,21,0,0" VerticalAlignment="Top" Width="510">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="157" Margin="248,109,0,0" VerticalAlignment="Top" Width="511" />
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="27" Margin="20,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="27" Margin="210,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="27" Margin="390,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="27" Margin="572,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="164"/>
 
     </Grid>
 </Window>
