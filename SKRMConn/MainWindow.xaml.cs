@@ -50,11 +50,11 @@ namespace SKRMConn
 
         private void ConnButton2_Click(object sender, RoutedEventArgs e)
         {
-            DataTable TableFromMysql = Conn1.GetDataMysql("SELECT * FROM events ORDER BY event ASC");
+          //  DataTable TableFromMysql = Conn1.GetDataMysql("SELECT * FROM events ORDER BY event ASC");
 
-            ListView.Items.Add();
+           // ListView.Items.Add();
 
-            ListView.ItemsSource = TableFromMysql.DefaultView;
+           // ListView.ItemsSource = TableFromMysql.DefaultView;
 
         }
     }
