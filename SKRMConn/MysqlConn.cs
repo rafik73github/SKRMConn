@@ -55,7 +55,7 @@ namespace SKRMConn
             
         }
 
-        public DataTable GetDataMysql(string sql1)
+        public DataTable GetDataMysqlDataTable(string sql1)
         {
             string[] crDB = getDBCredentials.ReadXML();
             skrmConnString = "Server =" + crDB[0] + "; Database = " + crDB[1] + "; Uid = " + crDB[2] + "; Pwd = " + crDB[3] + ";";
@@ -80,5 +80,11 @@ namespace SKRMConn
             return dt;
         }
 
-     }
+        
+
+
+
+
+
+    }
 }
