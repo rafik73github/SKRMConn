@@ -57,7 +57,7 @@ namespace SKRMConn
             textBox2.Text = dt1.Columns[1].ToString();
             textBox3.Text = dt1.Columns.Count.ToString();
             textBox4.Text = dt1.Rows.Count.ToString();
-
+            //blabla
         }
     }
 }
